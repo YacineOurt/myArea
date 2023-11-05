@@ -1,0 +1,187 @@
+/* styles/discover.module.css */
+
+.discoverContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.discoverContainer h1 {
+  margin-top: 5%;
+  color: #232323;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.zigZagContainer {
+  text-align: center;
+}
+
+.zigZagContainer p {
+  margin-bottom: 50px;
+}
+
+.zigZagContainer a {
+  text-decoration: none;
+  color: #232323;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.serviceContainer {
+  text-align: center;
+}
+
+.serviceContainer a {
+  text-decoration: none;
+  color: #232323;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.serviceRow {
+  display: flex;
+  align-items: center;
+}
+
+.serviceCardContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.serviceCard {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.serviceCard img {
+  max-width: 50px;
+  max-height: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.serviceCard h3 {
+  margin-top: 55%;
+  color: #232323;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.connectButton {
+  margin-top: 35%;
+  background-color: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.connectButton:hover {
+  background-color: #A3B0A0;
+  color: #fff;
+}
+
+.connectedButton {
+  margin-top: 35%;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.connectedButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.zigzagCard {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.zigzagCard img {
+  max-width: 50px;
+  max-height: 50px;
+  top: 10px;
+  left: -35px;
+  position: relative;
+}
+
+.zigzagCard h3 {
+  margin-top: 55%;
+  color: #232323;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.actionIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.reactionIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.servicesName {
+  color: #232323;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 15px 0;
+}
+
+.description {
+  overflow: hidden;
+  color: #232323;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+

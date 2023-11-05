@@ -1,0 +1,8 @@
+# Utilisez une image de serveur de fichiers statiques
+FROM halverneus/static-file-server:latest
+
+# Copiez l'APK de votre répertoire local vers le conteneur
+COPY build/app/outputs/flutter-apk/app-release.apk /web/client.apk
+
+# Configurez le port du serveur de fichiers
+ENV FILE_SERVER_PORT 8081

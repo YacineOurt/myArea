@@ -1,0 +1,52 @@
+/* styles/headerLogged.module.scss */
+
+.headerLoggedContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  margin-left: 150px;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profileImageContainer {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid #E8E0D9;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 50px;
+  color: #E8E0D9;
+}
+
+.profileImageContainer:hover .profileImage {
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 768px) {
+  .headerLoggedContainer {
+    margin-left: 20px;
+  }
+
+  .userName {
+    margin-right: 20px;
+  }
+}

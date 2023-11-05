@@ -1,0 +1,305 @@
+/* login.module.scss */
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.description {
+    color: #232323;
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+.registerText {
+    color: #232323;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.registerLink {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #232323;
+}
+
+.registerLink:hover {
+    color: #A3B0A0;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    height: 90%;
+    width: 100%;
+}
+
+.logo {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.googleButton, .appleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5% 10%;
+    border: 2px solid #232323;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.googleButton {
+    background-color: #E8E0D9;
+    color: #232323;
+}
+
+.appleButton {
+    background-color: #232323;
+    color: #E8E0D9;
+}
+
+.googleButton:hover, .appleButton:hover {
+    box-shadow:
+            inset -11em 0 0 0 #A3B0A0,
+            inset 11em 0 0 0 #A3B0A0,
+            0 0 50px #A3B0A0,
+            0 0 200px #A3B0A0;
+    transition-duration: 0.6s;
+}
+
+.separator {
+    border: 1px solid #000;
+    width: 40%;
+    margin: 20px 10%;
+}
+
+.loginOption {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.loginBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.loginBox h2 {
+    padding: 10%;
+    color: #232323;
+    text-align: center;
+}
+
+.loginBox .user-box {
+    position: relative;
+}
+
+.loginBox .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #232323;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #232323;
+    outline: none;
+    background: transparent;
+}
+
+.loginBox .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #232323;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.loginBox .user-box input:focus ~ label,
+.loginBox .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #A3B0A0;
+    font-size: 12px;
+}
+
+.submitButton {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    bottom: 45px;
+}
+
+.loginBox form .submitButton {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #232323;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.loginBox .submitButton:hover {
+    background: #A3B0A0;
+    color: #232323;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #A3B0A0, 0 0 25px #A3B0A0, 0 0 50px #A3B0A0, 0 0 100px #A3B0A0;
+}
+
+.loginBox .submitButton span {
+    position: absolute;
+    display: block;
+}
+
+.loginBox .submitButton span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #A3B0A0);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.loginBox .submitButton span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #A3B0A0);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.loginBox .submitButton span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #A3B0A0);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.loginBox .submitButton span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #A3B0A0);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
+
+.errorText {
+    color: red;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .loginOption {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .googleButton, .appleButton {
+        padding: 5% 20%;
+    }
+
+    .inputField, .loginButton {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .loginForm {
+        margin: 0;
+    }
+
+    .separator {
+        width: 20%;
+        transform: rotate(-90deg) scale(1, 1);
+        margin: 8% 5%;
+    }
+}

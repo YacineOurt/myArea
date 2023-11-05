@@ -1,0 +1,211 @@
+/* styles/creation.module.css */
+
+.creationHeading {
+  font-size:24px;
+  color: #232323;
+}
+
+.creationContainer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 85%;
+}
+
+/*.creationContainer p {
+  color: #555;
+  margin-bottom: 0.5%;
+}*/
+
+.progressBarContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressBar {
+  width: 80%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.previousButton,
+.nextButton {
+  background-color: #232323;
+  color: #fff;
+  padding: 10px 3%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.previousButton:hover {
+  background-color: red;
+}
+
+.nextButton:hover {
+  background-color: green;
+}
+
+.nextButton {
+  margin-left: 20px;
+}
+.previousButton {
+  margin-right: 20px;
+}
+
+.previousButton:disabled, .nextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.searchIcon {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #232323;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.zigzagPreview {
+  background-color: #A3B0A0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.zigzagPreviewHeading {
+  font-size: 22px;
+  color: #232323;
+}
+
+.zigzagPreviewContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rowContainer {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rowPreview {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #232323;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+}
+
+.rowPreview:nth-child(odd) {
+  background-color: #ececec;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.rowPreview:nth-child(even) {
+  background-color: #ececec;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .creationHeading {
+    font-size: 20px;
+  }
+
+  .creationContainer {
+    padding: 10px;
+  }
+
+  .progressBar {
+    width: 100%;
+  }
+
+  .previousButton,
+  .nextButton {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+  }
+
+  .nextButton {
+    margin-left: 10px;
+  }
+
+  .previousButton {
+    margin-right: 10px;
+  }
+
+  .searchBox {
+    padding: 5px 8px;
+  }
+
+  .searchIcon {
+    font-size: 16px;
+  }
+
+  .searchInput {
+    font-size: 14px;
+  }
+
+  .zigzagPreviewHeading {
+    font-size: 18px;
+  }
+
+  .rowPreview {
+    font-size: 12px;
+
+    a {
+      font-size: 16px;
+    }
+  }
+}

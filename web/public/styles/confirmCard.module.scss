@@ -1,0 +1,60 @@
+.confirmCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.actionReactionCard {
+  background-color: rgb(58, 59, 61);
+  position: relative;
+  height: 330px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 20px;
+  justify-content: space-between;
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .actionIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .reactionIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .servicesName {
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 15px 0;
+  }
+
+  .description {
+    overflow: hidden;
+    color: #FFF;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 45%;
+  }
+
+}

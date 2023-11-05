@@ -1,0 +1,41 @@
+name: Docker Compose Area
+
+on:
+  push:
+    branches:
+      - main  # Personnalisez la branche en fonction de vos besoins
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      run: docker-compose -v
+      # Assurez-vous que Docker Compose est installé dans l'environnement GitHub Actions
+
+    - name: Build and start Docker Compose
+      run: |
+        docker-compose -f "docker-compose.yml" build
+        docker-compose -f "docker-compose.yml" up -d
+
+      # Assurez-vous que le chemin du docker-compose.yml est correct
+
+    - name: Sleep to allow services to start
+      run: sleep 10
+      # Vous pouvez ajuster la durée en fonction de la complexité de votre application
+
+    - name: Check if services are running
+      run: docker-compose -f ./docker-compose.yml ps
+      # Vérifiez que les services sont en cours d'exécution
+
+    - name: Run tests or validation (e.g., curl, tests scripts)
+      run: |
+        # Insérez ici les commandes pour vérifier si votre application fonctionne correctement
+        # Cela peut inclure des requêtes HTTP (curl), des tests d'API, etc.
+
+    - name: Stop and remove Docker Compose containers
+      run: docker-compose -f ./docker-compose.yml down

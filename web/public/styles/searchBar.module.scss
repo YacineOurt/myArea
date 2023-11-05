@@ -1,0 +1,44 @@
+
+.searchContainer {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+.searchContainer {
+        width: 50%;
+    }
+}
+
+.searchBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin: 0 auto 2em;
+    max-width: 40em;
+}
+
+.searchIcon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #232323;
+}
+
+.searchInput {
+    padding-left: 3em;
+    width: 100%;
+    background-image: url(//web-assets.ifttt.com/packs/media/browse/search-fb3d11e551f122947c9d.svg);
+        background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 1em;
+    background-size: 1em;
+    background-color: #eee;
+    border-radius: .4em;
+    color: #232323;
+    display: inline-block;
+    font-size: 1.33333em;
+    font-weight: 700;
+    border: .25em solid #eee;
+    box-sizing: border-box;
+    appearance: none;
+}

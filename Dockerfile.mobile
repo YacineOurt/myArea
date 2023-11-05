@@ -1,0 +1,49 @@
+# Utilisez une image basée sur openjdk:11
+FROM openjdk:11-jdk-slim as builder
+
+WORKDIR /app
+COPY ./mobile /app
+
+# Installez les dépendances requises
+RUN apt-get update -y && apt-get install -y git wget unzip xz-utils curl libglu1-mesa gnupg maven
+
+# Installez Dart
+RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
+    sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list' && \
+    apt-get update -y && apt-get install dart -y
+
+# Téléchargez et installez la dernière version stable de Flutter depuis GitHub
+RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter -b stable --depth 1
+
+ENV PATH "$PATH:/usr/lib/dart/bin:/usr/local/flutter/bin"
+
+# Installez Android SDK en utilisant commandlinetools-linux
+RUN mkdir -p /usr/local/android-sdk/cmdline-tools && \
+    wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip && \
+    unzip commandlinetools-linux-7302050_latest.zip -d /usr/local/android-sdk/cmdline-tools && \
+    rm commandlinetools-linux-7302050_latest.zip
+
+ENV ANDROID_HOME /usr/local/android-sdk
+ENV PATH "$PATH:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools"
+
+# Acceptez les licences et installez les composants requis
+RUN yes | sdkmanager --licenses && \
+    sdkmanager "platform-tools" "platforms;android-29" "build-tools;29.0.2" "extras;google;google_play_services" "extras;google;webdriver"
+
+# Vérifiez la configuration de Flutter
+RUN flutter doctor
+
+# Construisez l'APK
+RUN flutter build apk --release
+
+# Copiez l'APK construit dans le dossier souhaité
+RUN cp build/app/outputs/flutter-apk/app-release.apk /app/client.apk
+
+# Utilisez un serveur de fichiers statiques pour servir l'APK
+FROM halverneus/static-file-server:latest
+
+# Copiez l'APK du stade précédent
+COPY --from=builder /app/client.apk /web/client.apk
+
+# Configurez le port du serveur de fichiers
+ENV FILE_SERVER_PORT 8081

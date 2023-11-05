@@ -1,0 +1,45 @@
+.carouselContainer {
+  .swiper {
+    cursor: grab;
+
+    &::before,
+    &::after {
+      z-index: 2;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800vw;
+      height: 800vw;
+      background: #eaedf0;
+      border-radius: 50%;
+    }
+
+    &::before {
+      top: -795vw;
+    }
+
+    &::after {
+      bottom: -795vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .swiper {
+      &::before,
+      &::after {
+        width: 400vw;
+        height: 400vw;
+      }
+
+      &::before {
+        top: -395vw;
+      }
+
+      &::after {
+        bottom: -395vw;
+      }
+    }
+  }
+}

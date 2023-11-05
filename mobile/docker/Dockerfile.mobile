@@ -1,0 +1,42 @@
+# Utilisez une image de base avec Flutter préinstallé
+FROM ubuntu:20.04
+
+# Mettre à jour et installer les dépendances nécessaires
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends tzdata && \
+    apt-get install -y git curl unzip xz-utils libglu1-mesa openjdk-8-jdk wget
+
+RUN apt-get update -y && apt-get install -y git curl unzip xz-utils libglu1-mesa openjdk-8-jdk wget
+
+# Configurer l'environnement pour Android
+ENV ANDROID_HOME /opt/android-sdk
+ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
+# Téléchargez et installez Android SDK
+RUN mkdir -p $ANDROID_HOME && cd $ANDROID_HOME && \
+    wget -q https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O android-tools.zip && \
+    unzip android-tools.zip && \
+    rm android-tools.zip
+
+# Acceptez les licences Android
+RUN yes | sdkmanager --licenses
+
+# Installez les composants nécessaires de l'Android SDK
+RUN sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+
+# Téléchargez et installez Flutter
+ENV FLUTTER_VERSION=3.13.5 
+RUN curl -o flutter.tar.xz -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_$FLUTTER_VERSION-stable.tar.xz
+RUN tar xf flutter.tar.xz -C /usr/local
+
+ENV PATH="$PATH:/usr/local/flutter/bin"
+
+WORKDIR /app
+
+COPY ./mobile ./
+
+RUN flutter build apk
+
+RUN cp build/app/outputs/flutter-apk/app-release.apk /app/app-release.apk
+

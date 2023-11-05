@@ -1,0 +1,53 @@
+/* ZigZagSlider.module.scss */
+
+.sliderContainer {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.slide {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  margin-right: 100px;
+  align-items: center;
+  padding: 30px;
+  perspective: 100px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  h4 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    color: #f0f0f0;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 16px;
+    color: #f0f0f0;
+    line-height: 1.4;
+  }
+
+}
+
+.void {
+  height: 250px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}

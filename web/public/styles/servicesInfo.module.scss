@@ -1,0 +1,264 @@
+/* servicesInfo.module.scss */
+
+.serviceInfoContainer {
+  background-color: #E8E0D9;
+  height: 100vh;
+}
+
+.headerContainer {
+  background-color: #232323;
+  color: #f0f0f0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.headerContainer button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #f0f0f0;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 15px;
+  position: relative;
+  transition: filter var(--motion-duration);
+}
+
+.headerContainer button:hover {
+  filter: brightness(1.1);
+}
+
+.headerContainer button:active {
+  filter: brightness(0.9);
+}
+
+.headerContainer button > span {
+  display: block;
+  position: relative;
+  transition: transform var(--motion-duration) var(--motion-ease);
+  z-index: 1;
+}
+
+.headerContainer button:hover > span {
+  transform: scale(1.05);
+}
+
+.headerContainer button:active > span {
+  transform: scale(0.95);
+}
+
+.headerContainer button > svg {
+  fill: #232323;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+}
+
+.headerContainer button > svg > path {
+  transition: var(--motion-duration) var(--motion-ease);
+}
+
+.headerContainer button:hover > svg > path {
+  d: path("M0,0 C0,-5 100,-5 100,0 C105,0 105,100 100,100 C100,105 0,105 0,100 C-5,100 -5,0 0,0");
+}
+
+.headerContainer button:active > svg > path {
+  d: path("M0,0 C30,10 70,10 100,0 C95,30 95,70 100,100 C70,90 30,90 0,100 C5,70 5,30 0,0");
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+.serviceIcon {
+  max-width: 100px;
+  max-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.headerTitle {
+  color: #f0f0f0;
+}
+
+.serviceInfoContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 23vh;
+  max-height: 50vh;
+  margin-top: 1px;
+}
+
+.serviceInfoCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.serviceIconName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.serviceInfoCard h2 {
+  color: #f0f0f0;
+  font-size: 2.2em;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+@mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
+.buttonConnectContainer {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin-left: 100px;
+  overflow: hidden;
+  border: 1px solid;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 101%;
+    height: 100%;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+    @include button(#232323,
+            "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+            2300%,
+            100%,
+            none,
+            #fff);
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+      -webkit-animation: ani 0.7s steps(22) forwards;
+      animation: ani 0.7s steps(22) forwards;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+  }
+}
+
+
+.mas {
+  position: absolute;
+  color: #232323;
+  text-align: center;
+  width: 101%;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  overflow: hidden;
+  transform: translateY(6px);
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+.serviceZigsZags {
+
+  h3 {
+    text-align: center;
+    color: #232323;
+    margin: 20px;
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .serviceInfoContent {
+    max-height: 30vh;
+  }
+
+  .serviceIcon {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  .buttonConnectContainer {
+    margin-left: 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+

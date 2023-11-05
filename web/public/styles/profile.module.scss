@@ -1,0 +1,135 @@
+/* styles/profile.module.css */
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profileImage {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  position: relative;
+  margin: 5% 5% 10% 10%;
+}
+
+.profileInfo h2 {
+  color: #232323;
+  text-align: left;
+  position: relative;
+  padding-bottom: 20%;
+}
+
+.profileInfo p {
+  color: #232323;
+  text-align: left;
+  position: relative;
+  padding-bottom: 20%;
+}
+
+.editContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 9% 5% 10% 5%;
+}
+
+.btn {
+  margin-left: 20%;
+  position: relative;
+  display: inline-block;
+  width: 277px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration:none;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.045em;
+}
+
+.btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btn svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 353, 0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.btn span{
+  background: #A3B0A0;
+  background: -moz-linear-gradient(left,  #A3B0A0 0%, #232323 100%);
+  background: -webkit-linear-gradient(left,  #A3B0A0 0%, #232323 100%);
+  background: linear-gradient(to right,  #A3B0A0 0%, #232323 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A3B0A0', endColorstr='#232323',GradientType=1 );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn:hover svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 196, 543;
+  stroke-dashoffset: 437;
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5% 0 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .profileContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profileImage {
+    height: 15rem;
+    width: 15rem;
+    margin: 10% 0 5% 0;
+  }
+
+  .profileInfo h2, .profileInfo p {
+    text-align: center;
+  }
+
+  .editContainer {
+    margin: 10% 0 5% 0;
+  }
+
+  .btn {
+    margin-left: 0;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navButton {
+    margin: 5% 0;
+  }
+}

@@ -1,0 +1,35 @@
+/* Styles de base */
+.dashboardContainer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.dashboardHeading {
+  font-size: 24px;
+  color: #232323;
+}
+
+.dashboardContainer p {
+  color: #555;
+  margin-top: 1%;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboardContainer {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .dashboardHeading {
+    font-size: 20px;
+  }
+
+  .dashboardContainer p {
+    margin-top: 0.5%;
+  }
+}

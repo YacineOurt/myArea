@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mobile:
+    build:
+      context: mobile/
+      dockerfile: Dockerfile.mobile
+    ports:
+      - "8081:8081"
+  
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8090:8090"
+
+  workflow:
+    build:
+      context: backend/workflow
+      dockerfile: Dockerfile.workflow
+    ports:
+      - "8080:8080"
+
+  web:
+    build:
+      context: web
+      dockerfile: Dockerfile.web
+    ports:
+      - "8081:8081"

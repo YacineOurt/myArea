@@ -1,0 +1,89 @@
+.progressBar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 29px;
+  height: 29px;
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid #232323;
+  background-clip: padding-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepBlock {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  flex-direction: column;
+}
+
+.stepBlock + .stepBlock {
+  margin-left: 30px;
+}
+
+.stepBlock .circleWrapper {
+  padding: 0 20px;
+  position: relative;
+}
+
+.selected .circle {
+  color: black;
+  background-color: white;
+  border-color: green;
+}
+
+.stepBlock:not(:last-child) > .circleWrapper::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: green;
+  margin: auto;
+  z-index: -1;
+}
+
+.stepBlock:not(:last-child) > .circleWrapper::after {
+  height: 3px;
+}
+
+.stepBlock:not(:last-child).selected > .circleWrapper::after, .stepBlock:not(:last-child).selected ~ .stepBlock:not(:last-child) > .circleWrapper::after {
+  height: 2px;
+  opacity: 0.6;
+}
+
+.stepLabel {
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .circle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stepBlock {
+    margin: 5px 0;
+  }
+
+  .stepBlock + .stepBlock {
+    margin-left: 20px;
+  }
+
+  .stepBlock .circleWrapper {
+    padding: 0 10px;
+  }
+
+  .stepLabel {
+    font-size: 12px;
+    margin-top: 3px;
+  }
+}
